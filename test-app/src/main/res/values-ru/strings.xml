@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_get_started">Начать</string>
+    <string name="text_favourite_books">Читайте любимые книги на языке оригинала с параллельным переводом</string>
+    <string name="text_learn_language_easily_with_books">Изучайте язык легко с помощью книг</string>
+    <string name="text_what_language_are_you_studying_now">Какой язык вы изучаете сейчас?</string>
+    <string name="text_english">Английский язык</string>
+    <string name="text_spain">Испанский язык</string>
+    <string name="text_french">Французский язык</string>
+    <string name="text_russian">Русский язык</string>
+    <string name="text_upload_your_favorite_book_and_start_your_journey">Загрузите свою любимую книгу и начните путешествие!</string>
+    <string name="text_you_can_upload_book_in_epub_format">Вы можете загрузить книгу в формате .EPUB</string>
+    <string name="text_add_new_epub_book">Добавить новую книгу в формате .EPUB</string>
+    <string name="text_unknown_error_please_try_again">Неизвестная ошибка. Пожалуйста, попробуйте еще раз</string>
+    <string name="text_last_opened_books">Последние открытые книги</string>
+    <string name="text_add_new_book">Добавить новую книгу</string>
+    <string name="text_show_all_27_books">Показать все 27 книг</string>
+    <string name="text_show_all_books">Показать все (%d) книг</string>
+    <string name="text_show_less">Показать меньше книг</string>
+</resources>

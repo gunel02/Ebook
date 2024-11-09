@@ -1,0 +1,24 @@
+<!--
+  Copyright 2023 Readium Foundation. All rights reserved.
+  Use of this source code is governed by the BSD-style license
+  available in the top-level LICENSE file of the project.
+-->
+
+<resources>
+
+    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
+
+    </style>
+    <!-- Base application theme. -->
+    <style name="ReaderTheme" parent="Theme.Material3.Light">
+
+    </style>
+
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/screen</item>
+        <item name="android:navigationBarColor">@color/background_color</item>
+        <item name="android:statusBarColor">@color/background_color</item>
+    </style>
+
+</resources>

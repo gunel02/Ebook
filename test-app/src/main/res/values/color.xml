@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_transparent">#1AFFFFFF</color>
+    <color name="background_color">#14161B</color>
+    <color name="gray_color">#83899F</color>
+    <color name="button_background_color">#8C31FF</color>
+    <color name="small_circular_color">#1AEC8A54</color>
+    <color name="big_circular_color">#05EC8A54</color>
+    <color name="circular_color">#E76C00</color>
+    <color name="card_stroke_color">#313843</color>
+    <color name="error_color">#FF4B40</color>
+    <color name="progress_bar_color">#9CA0B2</color>
+    <color name="transparent_progress_bar_color">#3D9CA0B2</color>
+
+
+    <color name="gradient">#78000000</color>
+    <color name="end_color">#0014161B</color>
+    <color name="start_color">#14161B</color>
+</resources>

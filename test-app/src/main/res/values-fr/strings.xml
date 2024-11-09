@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_get_started">Commencer</string>
+    <string name="text_favourite_books">Lire les livres préférés dans leur langue d\\\'origine avec une traduction parallèle</string>
+    <string name="text_learn_language_easily_with_books">Apprendre une langue facilement avec des livres</string>
+    <string name="text_what_language_are_you_studying_now">Quelle langue étudiez-vous actuellement ?</string>
+    <string name="text_english">Anglais</string>
+    <string name="text_spain">Espagnol</string>
+    <string name="text_french">Français</string>
+    <string name="text_russian">Russie</string>
+    <string name="text_upload_your_favorite_book_and_start_your_journey">Téléchargez votre livre préféré et commencez votre voyage !</string>
+    <string name="text_you_can_upload_book_in_epub_format">Vous pouvez télécharger des livres au format .EPUB</string>
+    <string name="text_add_new_epub_book">Ajouter un nouveau livre .EPUB</string>
+    <string name="text_unknown_error_please_try_again">Erreur inconnue. Veuillez réessayer</string>
+    <string name="text_last_opened_books">Derniers livres ouverts</string>
+    <string name="text_add_new_book">Ajouter un nouveau livre</string>
+    <string name="text_show_all_27_books">Afficher tous les 27 livres</string>
+    <string name="text_show_all_books">Afficher tous les livres (%d)</string>
+    <string name="text_show_less">Montrer moins</string>
+</resources>
