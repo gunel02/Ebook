@@ -12,6 +12,7 @@ import org.readium.r2.testapp.reader.ReaderActivityContract
 import org.readium.r2.testapp.utils.EventChannel
 
 class BookshelfViewModel(application: Application) : AndroidViewModel(application) {
+
     private val app
         get() =
             getApplication<org.readium.r2.testapp.Application>()
@@ -31,14 +32,6 @@ class BookshelfViewModel(application: Application) : AndroidViewModel(applicatio
 
     suspend fun getBooksWithoutFlow(): List<Book> {
         return app.bookRepository.booksWithoutFlow()
-    }
-
-    fun addPublicationFromStorage(uri: Uri) {
-        app.bookshelf.addPublicationFromStorage(uri.toUrl() as AbsoluteUrl)
-    }
-
-    fun addPublicationFromWeb(url: AbsoluteUrl) {
-        app.bookshelf.addPublicationFromWeb(url)
     }
 
     fun openPublication(

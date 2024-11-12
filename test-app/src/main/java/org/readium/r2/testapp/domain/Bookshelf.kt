@@ -62,30 +62,30 @@ class Bookshelf(
             addBookFeedback(publicationRetriever.retrieveFromStorage(uri))
         }
     }
-
-    fun importPublicationFromOpds(
-        publication: Publication
-    ) {
-        coroutineScope.launch {
-            addBookFeedback(publicationRetriever.retrieveFromOpds(publication))
-        }
-    }
-
-    fun addPublicationFromWeb(
-        url: AbsoluteUrl
-    ) {
-        coroutineScope.launch {
-            addBookFeedback(url)
-        }
-    }
-
-    fun addPublicationFromStorage(
-        url: AbsoluteUrl
-    ) {
-        coroutineScope.launch {
-            addBookFeedback(url)
-        }
-    }
+//
+//    fun importPublicationFromOpds(
+//        publication: Publication
+//    ) {
+//        coroutineScope.launch {
+//            addBookFeedback(publicationRetriever.retrieveFromOpds(publication))
+//        }
+//    }
+//
+//    fun addPublicationFromWeb(
+//        url: AbsoluteUrl
+//    ) {
+//        coroutineScope.launch {
+//            addBookFeedback(url)
+//        }
+//    }
+//
+//    fun addPublicationFromStorage(
+//        url: AbsoluteUrl
+//    ) {
+//        coroutineScope.launch {
+//            addBookFeedback(url)
+//        }
+//    }
 
     private suspend fun addBookFeedback(
         retrieverResult: Try<PublicationRetriever.Result, ImportError>
@@ -95,16 +95,16 @@ class Bookshelf(
             .onSuccess { channel.send(Event.ImportPublicationSuccess) }
             .onFailure { channel.send(Event.ImportPublicationError(it)) }
     }
-
-    private suspend fun addBookFeedback(
-        url: AbsoluteUrl,
-        format: Format? = null,
-        coverUrl: AbsoluteUrl? = null
-    ) {
-        addBook(url, format, coverUrl)
-            .onSuccess { channel.send(Event.ImportPublicationSuccess) }
-            .onFailure { channel.send(Event.ImportPublicationError(it)) }
-    }
+//
+//    private suspend fun addBookFeedback(
+//        url: AbsoluteUrl,
+//        format: Format? = null,
+//        coverUrl: AbsoluteUrl? = null
+//    ) {
+//        addBook(url, format, coverUrl)
+//            .onSuccess { channel.send(Event.ImportPublicationSuccess) }
+//            .onFailure { channel.send(Event.ImportPublicationError(it)) }
+//    }
 
     private suspend fun addBook(
         url: AbsoluteUrl,

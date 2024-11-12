@@ -1,8 +1,6 @@
 package org.readium.r2.testapp.bookshelf
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import java.io.File
@@ -26,7 +24,6 @@ class BookshelfAdapter(
         notifyDataSetChanged()
     }
 
-
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -40,19 +37,14 @@ class BookshelfAdapter(
         )
     }
 
-    override fun getItemCount(): Int {
-        return displayList.size
-    }
-
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val book = displayList[position]
 
         viewHolder.bind(book)
     }
 
-    inner class ViewHolder(private val  binding: ItemRecycleBookBinding) :
+    inner class ViewHolder(private val binding: ItemRecycleBookBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
 
         fun bind(book: Book) {
             binding.bookshelfTitleText.text = book.title
@@ -70,6 +62,10 @@ class BookshelfAdapter(
 
         }
 
+    }
+
+    override fun getItemCount(): Int {
+        return displayList.size
     }
 
     fun toggleShowAllBooks(showAll: Boolean) {

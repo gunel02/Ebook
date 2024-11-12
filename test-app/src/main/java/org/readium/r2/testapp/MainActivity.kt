@@ -1,14 +1,14 @@
 package org.readium.r2.testapp
 
 import BookshelfViewModel
-import OpenedBooksFragment
+import org.readium.r2.testapp.presentation.fragment.OpenedBooksFragment
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
-import org.readium.r2.testapp.test.testPackage.AddBookFragment
+import org.readium.r2.testapp.presentation.fragment.AddBookFragment
 
 class MainActivity : AppCompatActivity() {
     private val bookshelfViewModel: BookshelfViewModel by viewModels()

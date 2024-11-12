@@ -1,10 +1,9 @@
-package org.readium.r2.testapp.test.testPackage.utils
+package org.readium.r2.testapp.presentation.helper
 import BookshelfViewModel
 import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
 import android.net.Uri
-import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat

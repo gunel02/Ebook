@@ -25,7 +25,7 @@ import org.readium.r2.testapp.domain.Bookshelf
 import org.readium.r2.testapp.domain.CoverStorage
 import org.readium.r2.testapp.domain.PublicationRetriever
 import org.readium.r2.testapp.reader.ReaderRepository
-import org.readium.r2.testapp.test.testPackage.utils.SharedPreference
+import org.readium.r2.testapp.presentation.helper.SharedPreference
 import org.readium.r2.testapp.utils.tryOrLog
 import timber.log.Timber
 

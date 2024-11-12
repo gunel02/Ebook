@@ -1,6 +1,6 @@
-package org.readium.r2.testapp.test.testPackage
+package org.readium.r2.testapp.presentation.fragment
 
-import Const
+import org.readium.r2.testapp.presentation.helper.Const
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,7 +11,7 @@ import androidx.fragment.app.FragmentTransaction
 import java.util.Locale
 import org.readium.r2.testapp.R
 import org.readium.r2.testapp.databinding.FragmentChooseLanguageBinding
-import org.readium.r2.testapp.test.testPackage.utils.SharedPreference
+import org.readium.r2.testapp.presentation.helper.SharedPreference
 
 
 @Suppress("DEPRECATION")

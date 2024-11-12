@@ -49,11 +49,11 @@ class BookRepository(
 
         return booksDao.insertBookmark(bookmark)
     }
-
-    fun bookmarksForBook(bookId: Long): Flow<List<Bookmark>> =
-        booksDao.getBookmarksForBook(bookId)
-
-    suspend fun deleteBookmark(bookmarkId: Long) = booksDao.deleteBookmark(bookmarkId)
+//
+//    fun bookmarksForBook(bookId: Long): Flow<List<Bookmark>> =
+//        booksDao.getBookmarksForBook(bookId)
+//
+//    suspend fun deleteBookmark(bookmarkId: Long) = booksDao.deleteBookmark(bookmarkId)
 
     suspend fun highlightById(id: Long): Highlight? =
         booksDao.getHighlightById(id)

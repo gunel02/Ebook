@@ -1,3 +1,6 @@
+package org.readium.r2.testapp.presentation.fragment
+
+import BookshelfViewModel
 import android.graphics.Rect
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,8 +25,7 @@ import org.readium.r2.testapp.bookshelf.BookshelfAdapter
 import org.readium.r2.testapp.data.model.Book
 import org.readium.r2.testapp.databinding.FragmentOpenedBooksBinding
 import org.readium.r2.testapp.reader.ReaderActivityContract
-import org.readium.r2.testapp.test.testPackage.utils.FilePickerHelper
-import org.readium.r2.testapp.test.testPackage.utils.SettingFragment
+import org.readium.r2.testapp.presentation.helper.FilePickerHelper
 import org.readium.r2.testapp.utils.viewLifecycle
 
 class OpenedBooksFragment : Fragment() {

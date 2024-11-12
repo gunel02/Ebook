@@ -1,10 +1,10 @@
-package org.readium.r2.testapp.test.testPackage// org.readium.r2.testapp.test.testPackage.SplashScreenActivity.kt
+package org.readium.r2.testapp.presentation.activity// org.readium.r2.testapp.presentation.activity.SplashScreenActivity.kt
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import org.readium.r2.testapp.MainActivity
-import org.readium.r2.testapp.test.testPackage.utils.SharedPreference
+import org.readium.r2.testapp.presentation.helper.SharedPreference
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {

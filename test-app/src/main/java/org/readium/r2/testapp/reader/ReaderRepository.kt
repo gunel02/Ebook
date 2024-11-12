@@ -65,6 +65,7 @@ class ReaderRepository(
     operator fun get(bookId: Long): ReaderInitData? =
         repository[bookId]
 
+
     suspend fun open(bookId: Long): Try<Unit, OpeningError> =
         coroutineQueue.await { doOpen(bookId) }
 

@@ -30,7 +30,7 @@
         android:theme="@style/AppTheme"
         tools:targetApi="n" >
         <activity
-            android:name=".test.testPackage.SplashScreenActivity"
+            android:name=".presentation.activity.SplashScreenActivity"
             android:theme="@style/SplashTheme"
             android:exported="true" >
             <intent-filter>

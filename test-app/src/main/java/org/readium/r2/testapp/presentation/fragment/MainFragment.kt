@@ -1,4 +1,4 @@
-package org.readium.r2.testapp.test.testPackage
+package org.readium.r2.testapp.presentation.fragment
 
 import android.content.Context
 import android.graphics.drawable.GradientDrawable
@@ -12,9 +12,10 @@ import androidx.fragment.app.FragmentTransaction
 import java.util.Locale
 import org.readium.r2.testapp.R
 import org.readium.r2.testapp.databinding.FragmentMainBinding
-import org.readium.r2.testapp.test.testPackage.utils.SharedPreference
+import org.readium.r2.testapp.presentation.helper.SharedPreference
+import org.readium.r2.testapp.presentation.helper.Const
 
-class MainFragment : Fragment() {
+class  MainFragment : Fragment() {
 
     private lateinit var binding: FragmentMainBinding
 

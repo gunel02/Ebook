@@ -17,7 +17,7 @@ import org.readium.r2.testapp.data.model.Bookmark
 import org.readium.r2.testapp.data.model.Highlight
 
 @Database(
-    entities = [Book::class, Bookmark::class, Highlight::class, Catalog::class],
+    entities = [Book::class, Bookmark::class, Highlight::class ],
     version = 1,
     exportSchema = false
 )
@@ -27,8 +27,6 @@ import org.readium.r2.testapp.data.model.Highlight
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun booksDao(): BooksDao
-
-    abstract fun catalogDao(): CatalogDao
 
     companion object {
         @Volatile

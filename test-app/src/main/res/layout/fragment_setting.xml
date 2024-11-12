@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background_color"
     android:layout_height="match_parent"
-    tools:context=".test.testPackage.utils.SettingFragment">
+    tools:context=".presentation.fragment.SettingFragment">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/button_logout"

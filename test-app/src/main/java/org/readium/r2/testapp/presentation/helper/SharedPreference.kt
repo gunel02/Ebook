@@ -1,6 +1,5 @@
-package org.readium.r2.testapp.test.testPackage.utils
+package org.readium.r2.testapp.presentation.helper
 
-import Const
 import android.content.Context
 import android.content.SharedPreferences
 

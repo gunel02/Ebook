@@ -1,8 +1,3 @@
-/*
- * Copyright 2021 Readium Foundation. All rights reserved.
- * Use of this source code is governed by the BSD-style license
- * available in the top-level LICENSE file of the project.
- */
 
 package org.readium.r2.testapp.data.db
 
@@ -20,31 +15,17 @@ import org.readium.r2.testapp.data.model.Highlight
 @Dao
 interface BooksDao {
 
-    /**
-     * Inserts a book
-     * @param book The book to insert
-     * @return ID of the book that was added (primary key)
-     */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertBook(book: Book): Long
 
-    /**
-     * Deletes a book
-     * @param bookId The ID of the book
-     */
     @Query("DELETE FROM " + Book.TABLE_NAME + " WHERE " + Book.ID + " = :bookId")
     suspend fun deleteBook(bookId: Long)
 
-    /**
-     * Retrieve a book from its ID.
-     */
+
     @Query("SELECT * FROM " + Book.TABLE_NAME + " WHERE " + Book.ID + " = :id")
     suspend fun get(id: Long): Book?
 
-    /**
-     * Retrieve all books
-     * @return List of books as Flow
-     */
+
     @Query("SELECT * FROM " + Book.TABLE_NAME + " ORDER BY " + Book.CREATION_DATE + " desc")
     fun getAllBooks(): Flow<List<Book>>
 
@@ -52,25 +33,15 @@ interface BooksDao {
     @Query("SELECT * FROM " + Book.TABLE_NAME + " ORDER BY " + Book.CREATION_DATE + " desc")
     suspend fun getAllBooksWithoutFlow(): List<Book>
 
-    /**
-     * Retrieve all bookmarks for a specific book
-     * @param bookId The ID of the book
-     * @return List of bookmarks for the book as Flow
-     */
+
     @Query("SELECT * FROM " + Bookmark.TABLE_NAME + " WHERE " + Bookmark.BOOK_ID + " = :bookId")
     fun getBookmarksForBook(bookId: Long): Flow<List<Bookmark>>
 
-    /**
-     * Retrieve all highlights for a specific book
-     */
     @Query(
         "SELECT * FROM ${Highlight.TABLE_NAME} WHERE ${Highlight.BOOK_ID} = :bookId ORDER BY ${Highlight.TOTAL_PROGRESSION} ASC"
     )
     fun getHighlightsForBook(bookId: Long): Flow<List<Highlight>>
 
-    /**
-     * Retrieves the highlight with the given ID.
-     */
     @Query("SELECT * FROM ${Highlight.TABLE_NAME} WHERE ${Highlight.ID} = :highlightId")
     suspend fun getHighlightById(highlightId: Long): Highlight?
 

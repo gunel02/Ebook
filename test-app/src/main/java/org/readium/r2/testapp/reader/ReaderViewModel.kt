@@ -110,7 +110,6 @@ class ReaderViewModel(
         bookRepository.saveProgression(locator, bookId)
     }
 
-    fun getBookmarks() = bookRepository.bookmarksForBook(bookId)
 
     fun insertBookmark(locator: Locator) = viewModelScope.launch {
         val id = bookRepository.insertBookmark(bookId, publication, locator)
@@ -121,9 +120,6 @@ class ReaderViewModel(
         }
     }
 
-    fun deleteBookmark(id: Long) = viewModelScope.launch {
-        bookRepository.deleteBookmark(id)
-    }
 
     // Highlights
 

@@ -92,11 +92,11 @@ private class OutlineFragmentStateAdapter(
 
     override fun createFragment(position: Int): Fragment {
         return when (this.outlines[position]) {
-            Outline.Bookmarks -> BookmarksFragment()
             Outline.Highlights -> HighlightsFragment()
             Outline.Landmarks -> createLandmarksFragment()
             Outline.Contents -> createContentsFragment()
             Outline.PageList -> createPageListFragment()
+            Outline.Bookmarks -> TODO()
         }
     }
 
