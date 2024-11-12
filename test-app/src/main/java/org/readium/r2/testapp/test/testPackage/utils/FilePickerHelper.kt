@@ -1,4 +1,5 @@
 package org.readium.r2.testapp.test.testPackage.utils
+import BookshelfViewModel
 import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
@@ -9,7 +10,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import org.readium.r2.testapp.bookshelf.BookshelfViewModel
 
 object FilePickerHelper {
     private const val PERMISSION_REQUEST_CODE = 1001

@@ -14,15 +14,16 @@ import org.readium.r2.testapp.utils.singleClick
 class BookshelfAdapter(
     private val onBookClick: (Book) -> Unit,
     private val onBookLongClick: (Book) -> Unit
-) : ListAdapter<Book, BookshelfAdapter.ViewHolder>(BookListDiff()) {
+) : RecyclerView.Adapter<BookshelfAdapter.ViewHolder>() {
 
     private var showAllBooks = false
     private var originalList: List<Book> = emptyList()
+    private var displayList: List<Book> = emptyList()
 
-    override fun submitList(list: List<Book>?) {
+    fun submitList(list: List<Book>?) {
         originalList = list ?: emptyList()
-        val displayList = if (showAllBooks) originalList else originalList.take(2)
-        super.submitList(displayList)
+        displayList = if (showAllBooks) originalList else originalList.take(2)
+        notifyDataSetChanged()
     }
 
 
@@ -39,8 +40,12 @@ class BookshelfAdapter(
         )
     }
 
+    override fun getItemCount(): Int {
+        return displayList.size
+    }
+
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        val book = getItem(position)
+        val book = displayList[position]
 
         viewHolder.bind(book)
     }
@@ -70,27 +75,6 @@ class BookshelfAdapter(
     fun toggleShowAllBooks(showAll: Boolean) {
         showAllBooks = showAll
         submitList(originalList)
-    }
-
-    private class BookListDiff : DiffUtil.ItemCallback<Book>() {
-
-        override fun areItemsTheSame(
-            oldItem: Book,
-            newItem: Book
-        ): Boolean {
-            return oldItem.id == newItem.id
-        }
-
-
-        override fun areContentsTheSame(
-            oldItem: Book,
-            newItem: Book
-        ): Boolean {
-            return oldItem.title == newItem.title &&
-                oldItem.href == newItem.href &&
-                oldItem.author == newItem.author &&
-                oldItem.identifier == newItem.identifier
-        }
     }
 
 }

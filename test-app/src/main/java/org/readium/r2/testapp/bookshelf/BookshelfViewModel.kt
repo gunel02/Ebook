@@ -1,5 +1,3 @@
-package org.readium.r2.testapp.bookshelf
-
 import android.app.Application
 import android.net.Uri
 import androidx.lifecycle.AndroidViewModel
@@ -31,8 +29,12 @@ class BookshelfViewModel(application: Application) : AndroidViewModel(applicatio
         app.bookshelf.importPublicationFromStorage(uri)
     }
 
+    suspend fun getBooksWithoutFlow(): List<Book> {
+        return app.bookRepository.booksWithoutFlow()
+    }
+
     fun addPublicationFromStorage(uri: Uri) {
-        app.bookshelf.addPublicationFromStorage(uri.toUrl()!! as AbsoluteUrl)
+        app.bookshelf.addPublicationFromStorage(uri.toUrl() as AbsoluteUrl)
     }
 
     fun addPublicationFromWeb(url: AbsoluteUrl) {
@@ -49,6 +51,7 @@ class BookshelfViewModel(application: Application) : AndroidViewModel(applicatio
                     channel.send(Event.OpenPublicationError(it))
                 }
                 .onSuccess {
+
                     val arguments = ReaderActivityContract.Arguments(bookId)
                     channel.send(Event.LaunchReader(arguments))
                 }

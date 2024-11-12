@@ -1,4 +1,5 @@
 package org.readium.r2.testapp.bookshelf
+import BookshelfViewModel
 import android.content.Intent
 import android.graphics.Rect
 import android.net.Uri
@@ -25,7 +26,6 @@ import org.readium.r2.testapp.Application
 import org.readium.r2.testapp.R
 import org.readium.r2.testapp.data.model.Book
 import org.readium.r2.testapp.databinding.FragmentBookshelfBinding
-import org.readium.r2.testapp.opds.GridAutoFitLayoutManager
 import org.readium.r2.testapp.reader.ReaderActivityContract
 import org.readium.r2.testapp.utils.viewLifecycle
 
@@ -98,16 +98,7 @@ class BookshelfFragment : Fragment() {
                 }
             }
 
-        binding.bookshelfBookList.apply {
-            setHasFixedSize(true)
-            layoutManager = GridAutoFitLayoutManager(requireContext(), 120)
-            adapter = bookshelfAdapter
-            addItemDecoration(
-                VerticalSpaceItemDecoration(
-                    10
-                )
-            )
-        }
+
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 bookshelfViewModel.books.collectLatest {
@@ -116,7 +107,7 @@ class BookshelfFragment : Fragment() {
             }
         }
 
-        //+
+
         binding.bookshelfAddBookFab.setOnClickListener {
             var selected = 0
             MaterialAlertDialogBuilder(requireContext())
@@ -138,7 +129,7 @@ class BookshelfFragment : Fragment() {
         }
     }
 
-    //+
+
     @OptIn(DelicateReadiumApi::class)
     private fun askForRemoteUrl() {
         val urlEditText = EditText(requireContext())

@@ -68,6 +68,8 @@ android {
 
 dependencies {
     implementation(libs.androidx.activity)
+    implementation(libs.androidx.ui.android)
+    implementation(libs.androidx.ui.android)
     coreLibraryDesugaring(libs.desugar.jdk.libs)
 
     implementation(libs.kotlin.stdlib)

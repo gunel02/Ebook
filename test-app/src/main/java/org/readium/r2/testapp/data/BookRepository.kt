@@ -24,7 +24,10 @@ import org.readium.r2.testapp.utils.extensions.readium.authorName
 class BookRepository(
     private val booksDao: BooksDao
 ) {
+
+
     fun books(): Flow<List<Book>> = booksDao.getAllBooks()
+    suspend fun booksWithoutFlow() = booksDao.getAllBooksWithoutFlow()
 
     suspend fun get(id: Long) = booksDao.get(id)
 

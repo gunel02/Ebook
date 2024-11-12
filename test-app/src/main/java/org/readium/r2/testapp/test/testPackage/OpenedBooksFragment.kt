@@ -1,4 +1,3 @@
-package org.readium.r2.testapp.test.testPackage
 import android.graphics.Rect
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -19,11 +19,11 @@ import kotlinx.coroutines.launch
 import org.readium.r2.testapp.Application
 import org.readium.r2.testapp.R
 import org.readium.r2.testapp.bookshelf.BookshelfAdapter
-import org.readium.r2.testapp.bookshelf.BookshelfViewModel
 import org.readium.r2.testapp.data.model.Book
 import org.readium.r2.testapp.databinding.FragmentOpenedBooksBinding
 import org.readium.r2.testapp.reader.ReaderActivityContract
 import org.readium.r2.testapp.test.testPackage.utils.FilePickerHelper
+import org.readium.r2.testapp.test.testPackage.utils.SettingFragment
 import org.readium.r2.testapp.utils.viewLifecycle
 
 class OpenedBooksFragment : Fragment() {
@@ -72,6 +72,8 @@ class OpenedBooksFragment : Fragment() {
             appStoragePickerLauncher.launch("*/*")
         }
 
+        initListener()
+
         view.addOnAttachStateChangeListener(onViewAttachedListener)
 
         bookshelfViewModel.channel.receive(viewLifecycleOwner) { handleEvent(it) }
@@ -109,8 +111,19 @@ class OpenedBooksFragment : Fragment() {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 bookshelfViewModel.books.collectLatest {
                     bookshelfAdapter.submitList(it)
+
                 }
             }
+        }
+    }
+
+    private fun initListener() {
+        binding.iconSettings.setOnClickListener() {
+            val fragment = SettingFragment()
+            val transaction: FragmentTransaction =
+                requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container, fragment).addToBackStack(fragment.tag)
+            transaction.commit()
         }
     }
 
@@ -182,4 +195,3 @@ class OpenedBooksFragment : Fragment() {
     }
 
 }
-

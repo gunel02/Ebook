@@ -55,6 +55,7 @@ class Application : android.app.Application() {
     override fun onCreate() {
         SharedPreference.init(this)
 
+
         if (DEBUG) {
             enableStrictMode()
             Timber.plant(Timber.DebugTree())

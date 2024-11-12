@@ -1,56 +1,38 @@
-/*
- * Copyright 2021 Readium Foundation. All rights reserved.
- * Use of this source code is governed by the BSD-style license
- * available in the top-level LICENSE file of the project.
- */
-
 package org.readium.r2.testapp
 
+import BookshelfViewModel
+import OpenedBooksFragment
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentTransaction
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavController
-import androidx.navigation.ui.AppBarConfiguration
+import androidx.lifecycle.lifecycleScope
 import com.google.android.material.snackbar.Snackbar
-import org.readium.r2.testapp.test.testPackage.MainFragment
+import kotlinx.coroutines.launch
+import org.readium.r2.testapp.test.testPackage.AddBookFragment
 
 class MainActivity : AppCompatActivity() {
-
-
-    private lateinit var navController: NavController
+    private val bookshelfViewModel: BookshelfViewModel by viewModels()
     private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        val navView: BottomNavigationView = findViewById(R.id.nav_view)
-//        val navHostFragment =
-//            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-//        navController = navHostFragment.navController
 
-        initListener()
+        lifecycleScope.launch {
+            val books = bookshelfViewModel.getBooksWithoutFlow()
+            if (books.isEmpty()) {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, AddBookFragment())
+                    .commit()
+            } else {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, OpenedBooksFragment())
+                    .commit()
+            }
+        }
 
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_bookshelf,
-                R.id.navigation_catalog_list,
-                R.id.navigation_about
-
-
-            )
-        )
-//        setupActionBarWithNavController(navController, appBarConfiguration)
-//        navView.setupWithNavController(navController)
-//
         viewModel.channel.receive(this) { handleEvent(it) }
-//    }
-//
-//    override fun onSupportNavigateUp(): Boolean {
-//        return navController.navigateUp() || super.onSupportNavigateUp()
-//    }
     }
 
     @Suppress("DEPRECATION")
@@ -76,12 +58,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    private fun initListener() {
-        val fragment = MainFragment()
-        val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment_container, fragment).addToBackStack(fragment.tag)
-        transaction.commit()
-
-    }
-
 }

@@ -14,7 +14,6 @@ import androidx.room.TypeConverters
 import org.readium.r2.testapp.data.model.*
 import org.readium.r2.testapp.data.model.Book
 import org.readium.r2.testapp.data.model.Bookmark
-import org.readium.r2.testapp.data.model.Catalog
 import org.readium.r2.testapp.data.model.Highlight
 
 @Database(

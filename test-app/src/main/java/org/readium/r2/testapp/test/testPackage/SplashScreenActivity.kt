@@ -1,21 +1,26 @@
-package org.readium.r2.testapp.test.testPackage
-
+package org.readium.r2.testapp.test.testPackage// org.readium.r2.testapp.test.testPackage.SplashScreenActivity.kt
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import org.readium.r2.testapp.MainActivity
-import org.readium.r2.testapp.databinding.ActivityMainBinding
+import org.readium.r2.testapp.test.testPackage.utils.SharedPreference
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        startActivity(Intent(this, MainActivity::class.java))
+        val nextFragment = if (SharedPreference.hasBooks()) "OpenedBooks" else "AddBook"
+        val intent = Intent(this, MainActivity::class.java).apply {
+            putExtra("FRAGMENT_TO_LOAD", nextFragment)
+        }
+        startActivity(intent)
+        finish()
+
 
     }
+
 }
+

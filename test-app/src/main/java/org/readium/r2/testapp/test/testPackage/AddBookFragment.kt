@@ -1,6 +1,9 @@
 package org.readium.r2.testapp.test.testPackage
 
+import BookshelfViewModel
+import OpenedBooksFragment
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
@@ -19,10 +22,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.launch
 import org.readium.r2.testapp.Application
+import org.readium.r2.testapp.MainActivity
 import org.readium.r2.testapp.R
-import org.readium.r2.testapp.bookshelf.BookshelfViewModel
 import org.readium.r2.testapp.databinding.FragmentAddBookBinding
 import org.readium.r2.testapp.reader.ReaderActivityContract
+import org.readium.r2.testapp.test.testPackage.utils.SharedPreference
 import org.readium.r2.testapp.utils.viewLifecycle
 
 class AddBookFragment : Fragment() {
@@ -104,11 +108,17 @@ class AddBookFragment : Fragment() {
 
     private fun loadDataAndOpenFragment(uri: Uri) {
         bookshelfViewModel.importPublicationFromStorage(uri)
+
+    //
+        SharedPreference.setHasBooks(true)
+
         val fragment = OpenedBooksFragment()
         val transaction: FragmentTransaction =
             requireActivity().supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment).addToBackStack(fragment.tag)
         transaction.commit()
+
+
     }
 
 

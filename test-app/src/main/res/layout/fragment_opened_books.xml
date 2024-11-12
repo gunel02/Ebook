@@ -13,8 +13,7 @@
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fillViewport="true">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -40,21 +39,20 @@
                         android:textSize="20sp" />
 
                     <ImageView
-                        android:id="@+id/icon_delete"
+                        android:id="@+id/icon_settings"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:importantForAccessibility="no"
-                        android:padding="10dp"
-                        android:src="@drawable/icon_delete" />
+                        android:padding="5dp"
+                        android:src="@drawable/icon_settings" />
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/bookshelf_bookList"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
                     android:clipToPadding="false"
                     tools:itemCount="1" />
@@ -138,7 +136,9 @@
                 </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>
+
         </androidx.core.widget.NestedScrollView>
+
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <LinearLayout
