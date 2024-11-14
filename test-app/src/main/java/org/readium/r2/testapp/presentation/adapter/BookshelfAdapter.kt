@@ -1,4 +1,5 @@
-package org.readium.r2.testapp.bookshelf
+package org.readium.r2.testapp.presentation.adapter
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -18,6 +19,7 @@ class BookshelfAdapter(
     private var originalList: List<Book> = emptyList()
     private var displayList: List<Book> = emptyList()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun submitList(list: List<Book>?) {
         originalList = list ?: emptyList()
         displayList = if (showAllBooks) originalList else originalList.take(2)

@@ -1,10 +1,5 @@
-/*
- * Copyright 2022 Readium Foundation. All rights reserved.
- * Use of this source code is governed by the BSD-style license
- * available in the top-level LICENSE file of the project.
- */
 
-package org.readium.r2.testapp
+package org.readium.r2.testapp.app
 
 import android.content.Context
 import android.os.Build
@@ -19,6 +14,7 @@ import java.util.concurrent.Executors
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import org.readium.r2.testapp.BuildConfig.DEBUG
+import org.readium.r2.testapp.Readium
 import org.readium.r2.testapp.data.BookRepository
 import org.readium.r2.testapp.data.db.AppDatabase
 import org.readium.r2.testapp.domain.Bookshelf

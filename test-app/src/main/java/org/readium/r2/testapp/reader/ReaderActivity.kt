@@ -12,7 +12,7 @@ import androidx.fragment.app.commitNow
 import androidx.lifecycle.ViewModelProvider
 import org.readium.r2.shared.publication.Locator
 import org.readium.r2.shared.util.toUri
-import org.readium.r2.testapp.Application
+import org.readium.r2.testapp.app.Application
 import org.readium.r2.testapp.R
 import org.readium.r2.testapp.databinding.ActivityReaderBinding
 import org.readium.r2.testapp.drm.DrmManagementContract

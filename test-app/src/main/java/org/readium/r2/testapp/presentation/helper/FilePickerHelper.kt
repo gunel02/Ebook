@@ -1,5 +1,5 @@
 package org.readium.r2.testapp.presentation.helper
-import BookshelfViewModel
+import org.readium.r2.testapp.presentation.viewModel.BookshelfViewModel
 import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager

@@ -1,11 +1,11 @@
+package org.readium.r2.testapp.presentation.viewModel
+
 import android.app.Application
 import android.net.Uri
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.launch
-import org.readium.r2.shared.util.AbsoluteUrl
-import org.readium.r2.shared.util.toUrl
 import org.readium.r2.testapp.data.model.Book
 import org.readium.r2.testapp.reader.OpeningError
 import org.readium.r2.testapp.reader.ReaderActivityContract
@@ -15,7 +15,7 @@ class BookshelfViewModel(application: Application) : AndroidViewModel(applicatio
 
     private val app
         get() =
-            getApplication<org.readium.r2.testapp.Application>()
+            getApplication<org.readium.r2.testapp.app.Application>()
 
     val channel = EventChannel(Channel<Event>(Channel.BUFFERED), viewModelScope)
     val books = app.bookRepository.books()

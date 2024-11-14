@@ -1,6 +1,6 @@
 package org.readium.r2.testapp.presentation.fragment
 
-import BookshelfViewModel
+import org.readium.r2.testapp.presentation.viewModel.BookshelfViewModel
 import android.Manifest
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -19,7 +19,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.launch
-import org.readium.r2.testapp.Application
+import org.readium.r2.testapp.app.Application
 import org.readium.r2.testapp.R
 import org.readium.r2.testapp.databinding.FragmentAddBookBinding
 import org.readium.r2.testapp.reader.ReaderActivityContract

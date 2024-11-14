@@ -1,6 +1,6 @@
 package org.readium.r2.testapp.presentation.fragment
 
-import BookshelfViewModel
+import org.readium.r2.testapp.presentation.viewModel.BookshelfViewModel
 import android.graphics.Rect
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -19,9 +19,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import org.readium.r2.testapp.Application
+import org.readium.r2.testapp.app.Application
 import org.readium.r2.testapp.R
-import org.readium.r2.testapp.bookshelf.BookshelfAdapter
+import org.readium.r2.testapp.presentation.adapter.BookshelfAdapter
 import org.readium.r2.testapp.data.model.Book
 import org.readium.r2.testapp.databinding.FragmentOpenedBooksBinding
 import org.readium.r2.testapp.reader.ReaderActivityContract

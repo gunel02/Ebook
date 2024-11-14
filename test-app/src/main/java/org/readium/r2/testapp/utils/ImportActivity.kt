@@ -15,8 +15,8 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.core.content.IntentCompat
-import org.readium.r2.testapp.Application
-import org.readium.r2.testapp.MainActivity
+import org.readium.r2.testapp.app.Application
+import org.readium.r2.testapp.presentation.activity.MainActivity
 import timber.log.Timber
 
 class ImportActivity : Activity() {

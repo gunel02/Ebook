@@ -22,7 +22,7 @@
     </queries>
 
     <application
-        android:name=".Application"
+        android:name=".app.Application"
         android:icon="@mipmap/ic_launcher"
         android:label="Readium"
         android:networkSecurityConfig="@xml/network_security_config"
@@ -40,7 +40,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.activity.MainActivity"
             android:exported="true" >
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->

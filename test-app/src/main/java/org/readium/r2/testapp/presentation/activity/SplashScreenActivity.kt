@@ -3,7 +3,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import org.readium.r2.testapp.MainActivity
 import org.readium.r2.testapp.presentation.helper.SharedPreference
 
 @SuppressLint("CustomSplashScreen")

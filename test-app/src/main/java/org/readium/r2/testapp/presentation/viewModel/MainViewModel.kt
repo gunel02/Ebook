@@ -4,7 +4,7 @@
  * available in the top-level LICENSE file of the project.
  */
 
-package org.readium.r2.testapp
+package org.readium.r2.testapp.presentation.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -22,7 +22,7 @@ class MainViewModel(
 ) : AndroidViewModel(application) {
 
     private val app =
-        getApplication<org.readium.r2.testapp.Application>()
+        getApplication<org.readium.r2.testapp.app.Application>()
 
     val channel: EventChannel<Event> =
         EventChannel(Channel(Channel.UNLIMITED), viewModelScope)

@@ -46,8 +46,8 @@ class MediaService : MediaSessionService() {
      */
     inner class Binder : android.os.Binder() {
 
-        private val app: org.readium.r2.testapp.Application
-            get() = application as org.readium.r2.testapp.Application
+        private val app: org.readium.r2.testapp.app.Application
+            get() = application as org.readium.r2.testapp.app.Application
 
         private val sessionMutable: MutableStateFlow<Session?> =
             MutableStateFlow(null)
@@ -141,7 +141,7 @@ class MediaService : MediaSessionService() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         super.onStartCommand(intent, flags, startId)
-        val readerRepository = (application as org.readium.r2.testapp.Application).readerRepository
+        val readerRepository = (application as org.readium.r2.testapp.app.Application).readerRepository
 
         // App and service can be started again from a stale notification using
         // PendingIntent.getForegroundService, so we need to call startForeground and then stop
